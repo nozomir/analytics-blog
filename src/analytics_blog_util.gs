@@ -1,4 +1,4 @@
-function fromGAToSummarizeSheet(fromUrl, row) {
+function fromGAToSummarizeSheet(fromUrl, setRow) {
 
   //スプレッドシートを取得
   var spreadSheet = SpreadsheetApp.openByUrl(fromUrl);
@@ -9,12 +9,12 @@ function fromGAToSummarizeSheet(fromUrl, row) {
   }
 
   // 出力先のスプレッドシートを取得
-  var toUrl = 'https://docs.google.com/spreadsheets/d/13deRTQFun1kiSuc0o7Vy74-aUPUL-5KTnK6ByvSZjQY/edit#gid=1784139815';
+  var toUrl = 'https://docs.google.com/spreadsheets/d/13deRTQFun1kiSuc0o7Vy74-aUPUL-5KTnK6ByvSZjQY/edit#gid=584527977';
   var toSheet = SpreadsheetApp.openByUrl(toUrl).getSheets()[0];
 
   var setColumn = 8;
 
-  while (toSheet.getRange(row, setColumn).getValue() !== "") {
+  while (toSheet.getRange(setRow, setColumn).getValue() !== "") {
     setColumn++;
   }
 
@@ -56,14 +56,14 @@ function fromGAToSummarizeSheet(fromUrl, row) {
     }
 
     // 全体PVUUシートに書き出し
-    toSheet.getRange(row + i * 8, setColumn).setValue(pv);
-    toSheet.getRange(row + i * 8 + 1, setColumn).setValue(uu);
-    toSheet.getRange(row + i * 8 + 2, setColumn).setValue(organicSearches);
-    toSheet.getRange(row + i * 8 + 3, setColumn).setValue(twitterPv);
-    toSheet.getRange(row + i * 8 + 4, setColumn).setValue(socialPv);
-    toSheet.getRange(row + i * 8 + 5, setColumn).setValue(bounceRate);
-    toSheet.getRange(row + i * 8 + 6, setColumn).setValue(repeatRate);
-    toSheet.getRange(row + i * 8 + 7, setColumn).setValue(mobilePvRate);
+    toSheet.getRange(setRow + i * 8, setColumn).setValue(pv);
+    toSheet.getRange(setRow + i * 8 + 1, setColumn).setValue(uu);
+    toSheet.getRange(setRow + i * 8 + 2, setColumn).setValue(organicSearches);
+    toSheet.getRange(setRow + i * 8 + 3, setColumn).setValue(twitterPv);
+    toSheet.getRange(setRow + i * 8 + 4, setColumn).setValue(socialPv);
+    toSheet.getRange(setRow + i * 8 + 5, setColumn).setValue(bounceRate);
+    toSheet.getRange(setRow + i * 8 + 6, setColumn).setValue(repeatRate);
+    toSheet.getRange(setRow + i * 8 + 7, setColumn).setValue(mobilePvRate);
   }
 
 }

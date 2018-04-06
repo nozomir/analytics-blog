@@ -1,7 +1,7 @@
 var FROM_URL = 'https://docs.google.com/spreadsheets/d/1WP6M2Kei2v953Lr4tn1-aHhSaDlzbYNs3jGu1N6kGK4/edit#gid=463221618'
 
 function fromGAToSummarizeSheetForSCollection() {
-  fromGAToSummarizeSheet(FROM_URL, 159);
+  fromGAToSummarizeSheet(FROM_URL, 183);
 }
 
 function chatworkFromGA() {
